@@ -1,3 +1,8 @@
+---
+title: "Mini Data-Analysis Deliverable 1"
+output: html_document
+---
+
 # Welcome to your (maybe) first-ever data analysis project!
 
 And hopefully the first of many. Let's get started:
@@ -86,11 +91,11 @@ And that is exactly the first thing that you will do!
 ```{r}
 ### EXPLORE HERE ###
 
-cancer_sample
+*cancer_sample*  
 #have a overview of cancer_sample datasets#
 glimpse(cancer_sample)
 
-#figure out the diagnosis type of cancer#
+#figure the diagnosis type of cancer#
 cancer_sample$diagnosis
 
 #see if there's any missing value in this dataset#
@@ -98,10 +103,10 @@ cancer_sample[!complete.cases(cancer_sample),]
 
 #get a summary results for this datasets#
 summary(cancer_sample)
-```
 
-```{r}
-apt_buildings
+
+
+*apt_buildings*
 #get a overview of this datasets#
 glimpse(apt_buildings)
 
@@ -118,10 +123,8 @@ colnames(apt_buildings)[!complete.cases(t(apt_buildings))]
 
 unique(apt_buildings$air_conditioning)  
 unique(apt_buildings$facilities_available)
-```
 
-```{r}
-flow_sample
+*flow_sample*
 #get a overview of this datasets#
 glimpse(flow_sample)
 
@@ -130,10 +133,10 @@ flow_sample[!complete.cases(flow_sample),]
 
 #find the columns with NA values#
 colnames(flow_sample)[!complete.cases(t(flow_sample))]
-```
 
-```{r}
-steam_games
+
+
+*steam_games*
 #get a overview of this datasets#
 glimpse(steam_games)
 
@@ -147,6 +150,7 @@ steam_games[!complete.cases(steam_games),]
 
 #find the columns with NA values#
 colnames(steam_games)[!complete.cases(t(steam_games))]
+
 ```
 
 #comments#
@@ -169,7 +173,7 @@ If we rewind and go back to the learning objectives, you'll see that by the end 
 
 2.1 Complete *4 out of the following 8 exercises* to dive deeper into your data. All datasets are different and therefore, not all of these tasks may make sense for your data - which is why you should only answer *4*. Use *dplyr* and *ggplot*.
 
-1. Plot the distribution of a numeric variable.
+Plot the distribution of a numeric variable.
 # I would like to use histogram to plot the distribution of radius_mean, texture_mean,
 #smoothness_mean, compactness_mean, concavity_mean, symmetry_mean and factural_dimension_mean
 # histogram would be appropriate to display distribution and could help me understand how the variables are spreading out
@@ -206,80 +210,42 @@ ggplot(cancer_sample, aes(fractal_dimension_mean)) +
 #6  symmetry mean has symmetry distribution with peak at around 0.17
 #7 factural dimension mena has right skewed distribution with peak at 0.06
 
-2. Make a new tibble with a subset of your data, with variables and observations that you are interested in exploring.
+Make a new tibble with a subset of your data, with variables and observations that you are interested in exploring.
 
-#My major study interest would be on parameter means, so I would just create a variable that contains all the means
+#I would like to select different parameter means based on their diagnosis type#
+#I would like to see the relationship between diagnosis type and different parameter means
+
+#first I would like to create a new variable that include all partients diagnosed with 'M'
+
 ```{r}
-means<-cancer_sample%>%select(radius_mean:fractal_dimension_mean)
+diagnosis_M<-cancer_sample%>%filter(diagnosis=="M")%>%select(ID:fractal_dimension_mean)%>%group_by(ID)
 ```
+#Then I would like to create a new variable that include all partients diagnosed with 'B'
 
-#I could also study about SE for the parameters, so I would just create a variable that contains all the SEs
 ```{r}
-ses<-cancer_sample%>%select(radius_se:fractal_dimension_se)
+diagnosis_B<-cancer_sample%>%filter(diagnosis=="B")%>%select(ID:fractal_dimension_mean)%>%group_by(ID)
 ```
-#I could also study about "worst" for the parameters, so I would just create a variable that contains all the "worsts"
-```{r}
-worsrs<-cancer_sample%>%select(radius_worst:fractal_dimension_worst)
-```
+Explore the relationship between 2 variables in a plot.
 
-3. Explore the relationship between 2 variables in a plot.
-#For this part, I would like to know which two variables are highly correlated with each other. By doing this way, we can eliminate correlated variables in analysis
-#I assume that radius and area are highly correlated and I would like to see the relationship between radius_mean and area_mean variable. 
-```{r}
-ggplot(cancer_sample, aes(radius_mean, area_mean)) +
-  geom_point(aes(color = diagnosis),
-             size = 3,
-             alpha = 0.8) +
-  theme_minimal() +
-  facet_wrap(~ diagnosis)
-```
-#It seems that radius_mean and area_mean have linear relationship. When radius mean increases, the area mean also increases. They could be highly correlated with each other.  
 
-#
 
-4. Use a boxplot to look at the frequency of different observations within a single variable. You can do this for more than one variable if you wish!
+Use a boxplot to look at the frequency of different observations within a single variable. You can do this for more than one variable if you wish!
 
-#With the boxplot, I can visualize how parameter means would differ by different diagnosis type 
-#I would like to see the relationship between texture mean and different diagnosis types#
-```{r}
-ggplot(cancer_sample, aes(diagnosis, texture_mean)) + 
-    geom_boxplot(width = 0.2)
-
-```
-#accroding to this graph, patients with diagnosis of 'M' have significantly larger mean texture values compared to those patients with diagnosis of 'B'.
 #I would like to see the relationship between radius mean and different diagnosis types#
 ```{r}
-ggplot(cancer_sample, aes(diagnosis, radius_mean)) + 
+ggplot(cancer_sample, aes(diagnosis, radius) + 
     geom_boxplot(width = 0.2)
-```
+    
 #accroding to this graph, patients with diagnosis of 'M' have significantly larger mean radius compared to those patients with diagnosis of 'B'.
-#I would like to see the relationship between smoothness mean and different diagnosis types#
-```{r}
-ggplot(cancer_sample, aes(diagnosis, smoothness_mean)) + 
-    geom_boxplot(width = 0.2)
 ```
-#accroding to this graph, patients with diagnosis of 'M' have significantly larger mean smoothness compared to those patients with diagnosis of 'B'.
 
-#I would like to see the relationship between concavity mean and different diagnosis types#
-```{r}
-ggplot(cancer_sample, aes(diagnosis, concavity_mean)) + 
-    geom_boxplot(width = 0.2)
-```
-#accroding to this graph, patients with diagnosis of 'M' have significantly larger mean concavity compared to those patients with diagnosis of 'B'.
 
-#I would like to see the relationship between symmetry mean and different diagnosis types#
-```{r}
-ggplot(cancer_sample, aes(diagnosis, symmetry_mean)) + 
-    geom_boxplot(width = 0.2)
-```
-#accroding to this graph, patients with diagnosis of 'M' have slightly larger mean symmetry value compared to those patients with diagnosis of 'B'.
 
-#I would like to see the relationship between fractal_dimension_mean and different diagnosis types#
-```{r}
-ggplot(cancer_sample, aes(diagnosis, fractal_dimension_mean)) + 
+ggplot(penguins, aes(diagnosis, radius_mean)) + 
     geom_boxplot(width = 0.2)
-```
-#according to the graph the factal dimension mean seem to be the same for the two diagnosis type
+
+Use a density plot to explore any of your variables (that are suitable for this type of plot).
+
 
 2.2 For each of the 4 exercises that you complete, provide a *brief explanation* of why you chose that exercise in relation to your data (in other words, why does it make sense to do that?), and sufficient comments for a reader to understand your reasoning and code.
 
@@ -287,14 +253,8 @@ ggplot(cancer_sample, aes(diagnosis, fractal_dimension_mean)) +
 
 So far, you have chosen a dataset and gotten familiar with it through exploring the data. Now it's time to figure out 4 research questions that you would like to answer with your data! Write the 4 questions and any additional comments at the end of this deliverable. These questions are not necessarily set in stone - TAs will review them and give you feedback; therefore, you may choose to pursue them as they are for the rest of the project, or make modifications!
 
-1.  Which parameters are highly correlated to the diagnosis types?
-#comments: I can graph distribution plot between each parameter and diagnosis type so that I could understand which parameter would be the best to estimate diagnosis types.
-2.  Whether the relationship between cancer sample parameters and diagnosis type is consistent for mean, SE, and worst
-#comments: For this question, I can understand that whether we can just use the mean, SEs, or worst values to estimate the diagnosis type. For instance, if radius_mean, radius_SE, and radius_worst all have larger values for M type compared to B type, we can just use radius_mean to estimate diagnosis in the future. 
-3. What would be the relationship between means and worsts? 
-#comments: Would patients with larger mean values also have larger worst values? With this question, I can understand how mean and worsts are correlated 
-4. What would be the relationship between SEs and worsts? 
-#comments: Would patients with larger SE values also have larger worst values? With this question, I can understand how SEs and worsts are correlated 
+<!--- *****START HERE***** --->
+
 
 ### Attribution
 

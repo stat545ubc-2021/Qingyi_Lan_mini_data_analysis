@@ -1,3 +1,10 @@
+---
+title: "Mini Data-Analysis Deliverable 1"
+output:
+  pdf_document: default
+  html_document: default
+---
+
 # Welcome to your (maybe) first-ever data analysis project!
 
 And hopefully the first of many. Let's get started:
