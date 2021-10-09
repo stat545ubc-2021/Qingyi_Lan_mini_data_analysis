@@ -1,0 +1,6 @@
+"0",""
+"0","#find the columns with NA values#"
+"0","count(colnames(flow_sample)[!complete.cases(t(flow_sample))])"
+"2","Error in UseMethod(""count"") : 
+  no applicable method for 'count' applied to an object of class ""character""
+"

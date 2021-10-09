@@ -1,3 +1,8 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
 # Welcome to your (maybe) first-ever data analysis project!
 
 And hopefully the first of many. Let's get started:
@@ -137,11 +142,6 @@ steam_games
 #get a overview of this datasets#
 glimpse(steam_games)
 
-#explore how many categories are in each variable#
-unique(steam_games$developer)
-unique(steam_games$minimum_requirements)
-unique(steam_games$genre)
-
 #see if there's any missing value in this dataset#
 steam_games[!complete.cases(steam_games),]
 
@@ -219,7 +219,7 @@ ses<-cancer_sample%>%select(radius_se:fractal_dimension_se)
 ```
 #I could also study about "worst" for the parameters, so I would just create a variable that contains all the "worsts"
 ```{r}
-worsrs<-cancer_sample%>%select(radius_worst:fractal_dimension_worst)
+worsts<-cancer_sample%>%select(radius_worst:fractal_dimension_worst)
 ```
 
 3. Explore the relationship between 2 variables in a plot.

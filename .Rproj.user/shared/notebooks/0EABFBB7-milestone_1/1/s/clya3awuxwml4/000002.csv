@@ -1,0 +1,2 @@
+"0","ggplot(cancer_sample, aes(diagnosis, fractal_dimension_mean)) + "
+"0","    geom_boxplot(width = 0.2)"
