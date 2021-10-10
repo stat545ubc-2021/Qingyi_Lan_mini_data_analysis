@@ -1,6 +1,0 @@
-"0","ggplot(cancer_sample, aes(radius_mean, area_mean)) +"
-"0","  geom_point(aes(color = diagnosis),"
-"0","             size = 3,"
-"0","             alpha = 0.8) +"
-"0","  theme_minimal() +"
-"0","  facet_wrap(~ diagnosis)"

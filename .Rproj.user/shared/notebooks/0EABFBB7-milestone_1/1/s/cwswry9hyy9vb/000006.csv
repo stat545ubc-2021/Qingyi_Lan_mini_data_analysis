@@ -1,3 +1,0 @@
-"0",""
-"0","ggplot(cancer_sample, aes(smoothness_mean)) +"
-"0","   geom_histogram()"
