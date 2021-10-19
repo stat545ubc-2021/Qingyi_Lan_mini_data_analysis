@@ -1,10 +1,6 @@
 ---
-title: "milestone_1"
-author: "Janette"
-date: "09/10/2021"
-output:
-  html_document:
-    df_print: paged
+title: "Mini Data Analysis Milestone 1"
+output: github_document
 ---
 
 # Welcome to your (maybe) first-ever data analysis project!
