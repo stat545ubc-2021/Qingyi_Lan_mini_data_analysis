@@ -1,6 +1,0 @@
-"0","#reorder the Cancer_mean_radius level by their counts in M type"
-"0","Reorder_M<-Cancer_Mean_Radius%>%filter(diagnosis == ""M"")%>%mutate(Radius_level=fct_infreq(Radius_level))%>%ggplot(aes(y=Radius_level)) + geom_bar(aes(fill=Radius_level)) +"
-"0","  theme(axis.text.x = element_blank(),"
-"0","        axis.ticks.x = element_blank()) +"
-"0","  labs(y=""Radius Mean Level"", x = """", title = ""Radius Mean Level in M diagnosis type"")"
-"0","Reorder_M"

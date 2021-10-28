@@ -1,5 +1,0 @@
-"0",""
-"0","#compute the SD of radius_mean across diagnosis type#"
-"0","cancer_sample %>%"
-"0","  group_by(diagnosis) %>%"
-"0","  summarise(sd_radius_worst = sd(radius_worst, na.rm = TRUE))"

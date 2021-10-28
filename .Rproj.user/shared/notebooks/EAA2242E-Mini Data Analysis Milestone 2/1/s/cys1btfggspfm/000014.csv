@@ -1,6 +1,0 @@
-"0",""
-"0","#let's take a look at the summary statistics of radius_worst#"
-"0","#compute the mean of radius_worst across diagnosis type#"
-"0","cancer_sample %>%"
-"0","  group_by(diagnosis) %>%"
-"0","  summarise(mean_radius_worst = mean(radius_worst, na.rm = TRUE))"

@@ -1,1 +1,0 @@
-"0","mod1<-lm(radius_mean ~ radius_se, cancer_sample )"

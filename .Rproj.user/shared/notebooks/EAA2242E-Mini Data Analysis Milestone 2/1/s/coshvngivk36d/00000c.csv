@@ -1,2 +1,0 @@
-"0","ggplot(cancer_sample, aes(x = radius_se)) + "
-"0","    geom_density(aes(fill = diagnosis),alpha=0.3)"

@@ -1,3 +1,0 @@
-"0","ggplot(cancer_sample, aes(diagnosis, texture_mean)) + "
-"0","    geom_boxplot(width = 0.2)"
-"0",""

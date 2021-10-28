@@ -1,5 +1,0 @@
-"0",""
-"0","#compute the median of radius_mean across diagnosis type#"
-"0","cancer_sample %>%"
-"0","  group_by(diagnosis) %>%"
-"0","  summarise(median_radius_worst = median(radius_worst, na.rm = TRUE))"

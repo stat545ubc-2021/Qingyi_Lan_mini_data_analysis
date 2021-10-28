@@ -1,2 +1,0 @@
-"0","#I will fit a model called mod1, using radius_se and explanartory variable, and radius_mean as outcome variable."
-"0","mod1<-lm(radius_mean ~ radius_se, cancer_sample )"

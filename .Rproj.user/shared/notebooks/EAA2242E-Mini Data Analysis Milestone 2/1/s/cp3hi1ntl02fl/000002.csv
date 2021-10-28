@@ -1,2 +1,0 @@
-"0","ggplot(cancer_sample, aes(x = radius_se, y = radius_worst)) +"
-"0","       geom_point(aes(fill = factor(diagnosis)), shape = 21)"
