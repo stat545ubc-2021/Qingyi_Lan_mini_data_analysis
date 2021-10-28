@@ -386,18 +386,13 @@ mean<-tidy_cancer_sample%>%
 
 #Create a folder named "output" in the directory
 dir.create(here::here("output"))
-```
 
-    ## Warning in dir.create(here::here("output")): '/Users/janette/Desktop/
-    ## Qingyi_Lan_mini_data_analysis/output' already exists
-
-``` r
 #write csv file named "milestone2_exported_file.csv" within the folder
 write_csv(mean, here::here("output", "milestone2_exported_file.csv"))
 dir(here::here("output"))
 ```
 
-    ## [1] "milestone2_exported_file.csv" "model1.rds"
+    ## [1] "milestone2_exported_file.csv"
 
 <!----------------------------------------------------------------------------->
 
