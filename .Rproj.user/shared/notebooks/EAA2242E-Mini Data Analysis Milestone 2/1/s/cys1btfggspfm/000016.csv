@@ -1,0 +1,5 @@
+"0",""
+"0","#compute the range of radius_worst across diagnosis type#"
+"0","cancer_sample %>%"
+"0","  group_by(diagnosis) %>%"
+"0","  summarise(range_radius_worst = range(radius_worst, na.rm = TRUE))"

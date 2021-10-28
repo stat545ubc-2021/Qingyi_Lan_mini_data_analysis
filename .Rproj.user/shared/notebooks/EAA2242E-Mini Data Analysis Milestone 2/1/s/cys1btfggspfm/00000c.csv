@@ -1,0 +1,5 @@
+"0","#let's take a look at the summary statistics of radius_se#"
+"0","#compute the mean of radius_se across diagnosis type#"
+"0","cancer_sample %>%"
+"0","  group_by(diagnosis) %>%"
+"0","  summarise(mean_radius_se = mean(radius_se, na.rm = TRUE))"

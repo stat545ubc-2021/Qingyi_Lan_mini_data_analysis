@@ -1,0 +1,10 @@
+"0","mean<-tidy_cancer_sample%>%  
+  filter(measure == ""mean"")%>%
+  pivot_longer(cols = c(-ID, -diagnosis, -measure), 
+               names_to  = ""parameter"", 
+               values_to = ""mean_value"")%>%
+  group_by(parameter, diagnosis)%>%summarise(mean_mean = mean(mean_value, na.rm = TRUE))
+"
+"2","`summarise()` has grouped output by 'parameter'. You can override using the `.groups` argument.
+"
+"0",""

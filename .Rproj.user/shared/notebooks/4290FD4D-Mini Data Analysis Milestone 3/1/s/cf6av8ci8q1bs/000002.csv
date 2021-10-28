@@ -1,0 +1,2 @@
+"0","#I will fit a model called mod1, using radius_se and explanartory variable, and radius_mean as outcome variable."
+"0","broom::tidy(mod1)"

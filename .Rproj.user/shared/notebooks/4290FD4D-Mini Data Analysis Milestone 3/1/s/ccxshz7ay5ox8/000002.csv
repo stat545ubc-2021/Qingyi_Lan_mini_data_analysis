@@ -1,0 +1,5 @@
+"0","Cancer_Mean_Radius <- cancer_sample %>% "
+"0","   mutate(Radius_level = case_when(radius_mean < 11.700 ~ ""small"","
+"0","                                 radius_mean < 13.370 ~ ""moderate"","
+"0","                                 radius_mean < 15.780 ~ ""large"","
+"0","                                 TRUE ~ ""very large""))"
