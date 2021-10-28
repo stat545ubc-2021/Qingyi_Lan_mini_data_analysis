@@ -192,6 +192,8 @@ Fit a model or run a hypothesis test that provides insight on this variable with
 ```{r}
 #I will fit a model called mod1, using radius_se and explanartory variable, and radius_mean as outcome variable.
 mod1<-lm(radius_mean ~ radius_se, cancer_sample )
+#the output of this model will be shown as below
+mod1
 ```
 
 

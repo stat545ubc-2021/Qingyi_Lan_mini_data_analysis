@@ -301,7 +301,17 @@ specifics in STAT 545.
 ``` r
 #I will fit a model called mod1, using radius_se and explanartory variable, and radius_mean as outcome variable.
 mod1<-lm(radius_mean ~ radius_se, cancer_sample )
+#the output of this model will be shown as below
+mod1
 ```
+
+    ## 
+    ## Call:
+    ## lm(formula = radius_mean ~ radius_se, data = cancer_sample)
+    ## 
+    ## Coefficients:
+    ## (Intercept)    radius_se  
+    ##       10.63         8.63
 
 <!----------------------------------------------------------------------------->
 
@@ -386,13 +396,18 @@ mean<-tidy_cancer_sample%>%
 
 #Create a folder named "output" in the directory
 dir.create(here::here("output"))
+```
 
+    ## Warning in dir.create(here::here("output")): '/Users/janette/Desktop/
+    ## Qingyi_Lan_mini_data_analysis/output' already exists
+
+``` r
 #write csv file named "milestone2_exported_file.csv" within the folder
 write_csv(mean, here::here("output", "milestone2_exported_file.csv"))
 dir(here::here("output"))
 ```
 
-    ## [1] "milestone2_exported_file.csv"
+    ## [1] "milestone2_exported_file.csv" "model1.rds"
 
 <!----------------------------------------------------------------------------->
 
