@@ -9,13 +9,10 @@ This is a individual project for the STAT 545A course at the University of Briti
 
 |File name|File description|
 |:---|:---|
-|*Mini-Data-Analysis-Milestone-1_files*| This folder contains all the figures from milestone 1
-|*Mini-Data-Analysis-Milestone-2_files*| This folder contains all the figures from milestone 2
-|*Mini-Data-Analysis-Milestone-1.rmd**|This R Markdown file contains data analysis for milestone 1|
-|*Mini-Data-Analysis-Milestone-2.rmd**|This R Markdown file contains data analysis for milestone 2|
-|Mini-Data-Analysis-Milestone-1.md*|This Markdown file contains data analysis for milestone 1|
-|*Mini-Data-Analysis-Milestone-2.md*|This Markdown file contains data analysis for milestone 2|
-|*README.md*|This Markdown file provides an overview of the project.|
+|*Milestone 1 directory*| This folder contains all the figures from milestone 1, milestone 1 rmd file, milestone 1 md file and a readme file
+|*Milestone 2 directory*| his folder contains all the figures from milestone 2, milestone 2 rmd file, milestone 2 md file and a readme file
+|*Milestone 3 directory*|his folder contains all the figures from milestone 3, milestone 3 rmd file, milestone 3 md file, output file and a readme file
+
 
 
 
