@@ -1,3 +1,10 @@
+---
+title: "Mini Data Analysis Milestone 3"
+author: "Janette"
+date: "28/10/2021"
+output: html_document
+---
+
 Mini Data Analysis Milestone 3
 ================
 
@@ -50,9 +57,10 @@ your results in the context of a different research question.
 
 Begin by loading your data and the tidyverse package below:
 
-``` r
+```r
 library(datateachr) # <- might contain the data you picked!
 library(tidyverse)
+
 ```
 
 From Milestone 2, you chose two research questions. What were they? Put
@@ -419,15 +427,6 @@ saveRDS(mod1, here::here("output", "model1.rds"))
 #readRDS and pull out the model
 readRDS(here::here("output", "model1.rds"))
 ```
-
-    ## 
-    ## Call:
-    ## lm(formula = radius_mean ~ radius_se, data = cancer_sample)
-    ## 
-    ## Coefficients:
-    ## (Intercept)    radius_se  
-    ##       10.63         8.63
-
 <!----------------------------------------------------------------------------->
 
 # Tidy Repository

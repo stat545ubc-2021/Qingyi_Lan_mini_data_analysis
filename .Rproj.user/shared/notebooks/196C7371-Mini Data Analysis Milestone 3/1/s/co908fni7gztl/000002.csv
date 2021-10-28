@@ -1,0 +1,3 @@
+"0","#I will fit a model called mod1, using radius_se and explainatory variable, and radius_mean as outcome variable."
+"0","#I would use broom::tidy function to pull out p values and estimate for intercept and slope"
+"0","broom::tidy(mod1)"
