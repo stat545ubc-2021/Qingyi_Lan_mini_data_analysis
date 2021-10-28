@@ -1,6 +1,6 @@
 ---
-title: "Mini Data-Analysis Deliverable 3"
-output: html_document
+title: "Mini Data Analysis Milestone 3"
+output: github_document
 ---
 
 
@@ -211,7 +211,7 @@ Produce something relevant from your fitted model: either predictions on Y, or a
 #I would use broom::tidy function to pull out p values and estimate for intercept and slope
 broom::tidy(mod1)
 ```
-# p values for radius_se is <0.05, indicating this model has statistical significance and we could use radius_se to predict radius_mean. When radius_se is equal to 0, the radius mean would be 10.6307, and for every 1 unit increase in radius_se, radius mean will increase by 8.6298. 
+#p values for radius_se is <0.05, indicating this model has statistical significance and we could use radius_se to predict radius_mean. When radius_se is equal to 0, the radius mean would be 10.6307, and for every 1 unit increase in radius_se, radius mean will increase by 8.6298. 
 <!----------------------------------------------------------------------------->
 
 
